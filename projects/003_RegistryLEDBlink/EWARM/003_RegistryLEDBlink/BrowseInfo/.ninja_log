@@ -1,0 +1,19 @@
+# ninja log v6
+1	43	8005686873543833	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_9345438667183768884.dir/main.c.json	4fda11e142723cc4
+44	89	8005686873976374	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_5166855377044049419.dir/stm32f4xx_hal_msp.c.json	a353f82acc8d0c17
+89	139	8005686874310271	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_17212722124471408081.dir/stm32f4xx_it.c.json	e8f1a06572bb64f0
+139	183	8005686874870728	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_7842844356638189474.dir/system_stm32f4xx.c.json	efb24dbd85424688
+183	227	8005686875310533	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_2574257417942943618.dir/stm32f4xx_hal.c.json	3b322da7891c7a10
+228	272	8005686875734503	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_8271664498723903844.dir/stm32f4xx_hal_cortex.c.json	14e5dfd6f001d5de
+272	315	8005686876206702	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_4408747211363283090.dir/stm32f4xx_hal_dma.c.json	53a8ce0835a185d1
+316	358	8005686876677495	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_1904742995302480264.dir/stm32f4xx_hal_dma_ex.c.json	794212ca1a9af7fe
+358	403	8005686877038098	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_8846769003119280499.dir/stm32f4xx_hal_exti.c.json	6074f0ce82a7bc4c
+404	448	8005686877577994	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_715965757228957608.dir/stm32f4xx_hal_flash.c.json	8d70c18470b13ed4
+448	490	8005686878005100	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_5482407134888553452.dir/stm32f4xx_hal_flash_ex.c.json	dc5934727eaa4b4
+490	530	8005686878424915	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_11753923845331668066.dir/stm32f4xx_hal_flash_ramfunc.c.json	7122e47b9ef833bf
+530	570	8005686878721852	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_12447680054400157171.dir/stm32f4xx_hal_gpio.c.json	c7c56a1d82a14daf
+571	609	8005686879196894	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_5524704084487524043.dir/stm32f4xx_hal_pwr.c.json	75de4317421618de
+609	653	8005686879512042	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_2192036558297866650.dir/stm32f4xx_hal_pwr_ex.c.json	3315eeede6b88ce9
+653	696	8005686879987998	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_5968338931592963689.dir/stm32f4xx_hal_rcc.c.json	1472f175495dab09
+696	736	8005686880462419	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/Src_12454407512875011684.dir/stm32f4xx_hal_rcc_ex.c.json	f5447f658e4ce3c9
+736	756	8005686880779545	C:/ST/STM32WS/projects/003_RegistryLEDBlink/EWARM/003_RegistryLEDBlink/BrowseInfo/compile_commands.json	ba27dac469a026d0

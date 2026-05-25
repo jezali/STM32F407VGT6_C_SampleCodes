@@ -1,0 +1,15 @@
+C:\ST\iar\ewarm-9.70.2\arm\bin\armproc.dll
+
+ C:\ST\iar\ewarm-9.70.2\arm\bin\armstlink.dll
+
+ C:\ST\STM32WS\projects\007_NonBlockingButtonPolling\EWARM\007_NonBlockingButtonPolling\Exe\007_NonBlockingButtonPolling.out
+
+ --plugin=C:\ST\iar\ewarm-9.70.2\arm\bin\armLibSupportUniversal.dll
+
+ --device_macro=C:\ST\iar\ewarm-9.70.2\arm/config/debugger/ST/STM32F4xx.dmac
+
+ --flash_loader=C:\ST\iar\ewarm-9.70.2\arm/config/flashloader/ST/FlashSTM32F4xxx.board
+
+ 
+
+

@@ -1,0 +1,20 @@
+# ninja log v6
+1	43	8009998652195030	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_5529639980037610338.dir/gpio.c.json	27f19511771274f6
+43	88	8009998652636203	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_9345438667183768884.dir/main.c.json	bdb859305f140aff
+89	132	8009998653047790	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_5166855377044049419.dir/stm32f4xx_hal_msp.c.json	d4f93359b41cf1dd
+133	178	8009998653501113	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_17212722124471408081.dir/stm32f4xx_it.c.json	accb59111c0da399
+184	228	8009998653958945	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_7842844356638189474.dir/system_stm32f4xx.c.json	7297594ce5f7a72c
+228	274	8009998654445004	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_2574257417942943618.dir/stm32f4xx_hal.c.json	b7421f7be389260
+274	319	8009998654899800	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_8271664498723903844.dir/stm32f4xx_hal_cortex.c.json	e60dce63fab4a4ef
+319	361	8009998655355859	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_4408747211363283090.dir/stm32f4xx_hal_dma.c.json	2161ca69847ba0f
+361	405	8009998655772270	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_1904742995302480264.dir/stm32f4xx_hal_dma_ex.c.json	e4f804a07857a894
+406	449	8009998656152388	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_8846769003119280499.dir/stm32f4xx_hal_exti.c.json	bf2ffaa18c771b7
+449	492	8009998656625975	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_715965757228957608.dir/stm32f4xx_hal_flash.c.json	d540701bd598b244
+492	535	8009998657100188	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_5482407134888553452.dir/stm32f4xx_hal_flash_ex.c.json	1ab136f5d24ea845
+535	630	8009998657516400	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_11753923845331668066.dir/stm32f4xx_hal_flash_ramfunc.c.json	9999a7b471076b0b
+630	669	8009998658359702	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_12447680054400157171.dir/stm32f4xx_hal_gpio.c.json	4fb44de63c87535e
+669	709	8009998658835464	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_5524704084487524043.dir/stm32f4xx_hal_pwr.c.json	d14bd63ddded07d4
+709	748	8009998659154642	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_2192036558297866650.dir/stm32f4xx_hal_pwr_ex.c.json	ce5fa7e0e04b17d
+748	788	8009998659634440	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_5968338931592963689.dir/stm32f4xx_hal_rcc.c.json	1cedfd82e2ad9d93
+788	833	8009998659973579	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/Src_12454407512875011684.dir/stm32f4xx_hal_rcc_ex.c.json	6760e412053b16db
+833	854	8009998660428976	C:/ST/STM32WS/projects/009_ExternalInterruptButton/EWARM/009_ExternalInterruptButton/BrowseInfo/compile_commands.json	fdb7e22d90257210

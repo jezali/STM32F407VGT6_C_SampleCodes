@@ -1,0 +1,20 @@
+# ninja log v6
+1	43	8005679188079984	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_5529639980037610338.dir/gpio.c.json	50282112ef4e493b
+43	90	8005679188527750	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_9345438667183768884.dir/main.c.json	cf602e43c7d8c514
+90	135	8005679188979559	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_5166855377044049419.dir/stm32f4xx_hal_msp.c.json	2a6e1c0158cfca9e
+136	179	8005679189384496	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_17212722124471408081.dir/stm32f4xx_it.c.json	dfc356e170ee35cc
+180	224	8005679189829128	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_7842844356638189474.dir/system_stm32f4xx.c.json	42ee5e2e6a7f516
+230	274	8005679190295610	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_2574257417942943618.dir/stm32f4xx_hal.c.json	c0a11bed8bd45f4d
+275	318	8005679190816038	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_8271664498723903844.dir/stm32f4xx_hal_cortex.c.json	fab889e2c285cfc1
+318	362	8005679191211378	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_4408747211363283090.dir/stm32f4xx_hal_dma.c.json	c4a7e824d5ee8dc2
+363	406	8005679191682764	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_1904742995302480264.dir/stm32f4xx_hal_dma_ex.c.json	3ead5b79eb32c8cf
+406	455	8005679192155550	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_8846769003119280499.dir/stm32f4xx_hal_exti.c.json	ae0e40f2a3cacd70
+456	571	8005679192630942	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_715965757228957608.dir/stm32f4xx_hal_flash.c.json	6998e01d44121d58
+572	613	8005679193789010	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_5482407134888553452.dir/stm32f4xx_hal_flash_ex.c.json	b66b91ef66d254a9
+613	656	8005679194222863	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_11753923845331668066.dir/stm32f4xx_hal_flash_ramfunc.c.json	29763ca6c1f107d5
+656	696	8005679194607247	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_12447680054400157171.dir/stm32f4xx_hal_gpio.c.json	6adc8a0a0c4472f8
+696	734	8005679195019928	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_5524704084487524043.dir/stm32f4xx_hal_pwr.c.json	b26d479afb4002d0
+735	774	8005679195386822	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_2192036558297866650.dir/stm32f4xx_hal_pwr_ex.c.json	b1110a5affa4c4ae
+774	813	8005679195811676	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_5968338931592963689.dir/stm32f4xx_hal_rcc.c.json	f8472ab7b1e6e183
+814	852	8005679196170768	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/Src_12454407512875011684.dir/stm32f4xx_hal_rcc_ex.c.json	ddf10ecaed36517
+852	873	8005679196609359	C:/ST/STM32WS/projects/002_PeriodicLEDBlink/EWARM/002_PeriodicLEDBlink/BrowseInfo/compile_commands.json	76b871a887e90374
