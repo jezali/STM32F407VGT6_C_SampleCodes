@@ -208,7 +208,7 @@ void EXTI4_IRQHandler(void)
   /* USER CODE END EXTI4_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(BTN0_Pin);
   /* USER CODE BEGIN EXTI4_IRQn 1 */
-  HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+  
   /* USER CODE END EXTI4_IRQn 1 */
 }
 
