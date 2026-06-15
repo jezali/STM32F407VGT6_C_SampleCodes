@@ -23,6 +23,8 @@
 /* USER CODE BEGIN Includes */
 
 #include <stdio.h>
+#include <string.h>
+#include <math.h>
 #include <stdarg.h>
 
 /* USER CODE END Includes */
@@ -89,7 +91,7 @@ typedef struct {
 #define ALCD_EN_HIGH_TIME                       20       //us
 #define ALCD_EN_LOW_TIME                        20       //us
 
-#define ALCD_PRINTF_BUF_SIZE                    20
+#define ALCD_PRINTF_BUF_SIZE                    40
 
 // ALCD COMMANDS -------------------------------------------------------------*
 
@@ -153,7 +155,8 @@ typedef struct {
 /* USER CODE BEGIN PV */
 
 static ALCD_Handle alcdHandle = { 0 };
-uint32_t counter = 0;
+static uint32_t oldNum = 0;
+static uint32_t oldLen = 0;
 
 /* USER CODE END PV */
 
@@ -167,14 +170,14 @@ void Delay_ms(uint32_t ms);
 
 void ALCD_init(uint8_t col, uint8_t row);
 void ALCD_initPins(void);
-
 void ALCD_write(ALCD_RS_State rs, uint8_t val, uint32_t timeout);
 void ALCD_write4Bit(ALCD_RS_State rs, uint8_t val); 
 void ALCD_trigger(void);
 
 void ALCD_clear();
-
 void ALCD_goto(uint8_t x, uint8_t y);
+void ALCD_clearLocation(uint8_t x, uint8_t y);
+void ALCD_clearSection(int8_t x0, int8_t y0, int8_t x1, int8_t y1);
 
 void ALCD_putChar(char c);
 void ALCD_puts(const char* str);
@@ -229,16 +232,19 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  uint32_t counter = 10;
   
+  ALCD_printfXY(0, 0, "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
   while (1)
   {
     
     ALCD_printfXY(0, 0, "TIME: %d", counter);
-    ALCD_putNumXY(6, 1, counter);
-    ALCD_Delay_ms(1000);
-    ALCD_clear();
+    //ALCD_putNumXY(10, 0, counter);
+    ALCD_Delay_ms(150);
     counter++;
-    if (counter == 25) { counter = 0; }
+    if (counter == 101) { counter = 0; }
+    
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -295,6 +301,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 // SoftwareDelay--------------------------------------------------------------*
+
 void Delay_us(uint32_t us) {
   us = SystemCoreClock / 3000000 * us;
   
@@ -319,7 +326,9 @@ void Delay_ms(uint32_t ms) {
     : "cc"
   );
 }
+
 // End of SoftwareDelay-------------------------------------------------------*
+
 void ALCD_init(uint8_t col, uint8_t row) {
   
   ALCD_initPins();
@@ -418,7 +427,6 @@ void ALCD_initPins(void) {
   HAL_GPIO_Init(ALCD_D7_GPIO, &init);
   
 }
-
 void ALCD_write(ALCD_RS_State rs, uint8_t val, uint32_t timeout) {
   
   ALCD_Byte byte =  { val };
@@ -460,7 +468,6 @@ void ALCD_write4Bit(ALCD_RS_State rs, uint8_t val) {
   ALCD_trigger();
   
 }
-
 void ALCD_trigger(void) {
   
   // SET HIGH
@@ -481,26 +488,6 @@ void ALCD_clear() {
   );
   
 }
-
-void ALCD_putChar(char c) {
-  
-  ALCD_write(ALCD_RS_State_Data, c, ALCD_CMD_WRITE_DATA);
-  
-  if (++alcdHandle.X >= alcdHandle.Columns) {
-    alcdHandle.X = 0;
-    if (++alcdHandle.Y >= alcdHandle.Rows) {
-      alcdHandle.Y = 0;
-    }
-    ALCD_goto(alcdHandle.X, alcdHandle.Y);
-  }
-}
-void ALCD_puts(const char* str) {
-  
-  while (*str != '\0') {
-    ALCD_putChar(*str++);
-  }
-}
-
 void ALCD_goto(uint8_t x, uint8_t y) {
   
   static const uint8_t LINE_ADDR[4] = {
@@ -524,15 +511,54 @@ void ALCD_goto(uint8_t x, uint8_t y) {
   alcdHandle.Y = y;
   
 }
+void ALCD_clearLocation(uint8_t x, uint8_t y) {
+  ALCD_putsXY(x, y, " ");
+}
+void ALCD_clearSection(int8_t x0, int8_t y0, int8_t x1, int8_t y1) {
+  
+  if (y0 == y1) {
+    while (x1 >= x0) { 
+      ALCD_clearLocation(x1, y0);
+      x1--;
+    }
+  } else if (y1 != y0) {
+    while (x1 >= 0) {
+      ALCD_clearLocation(x1, y1);
+      x1--;
+    } while (x0 <= 15) {
+      ALCD_clearLocation(x0, y0);
+      x0++;
+    }
+  }
+}
 
-void ALCD_putNum(uint32_t num) {
+void ALCD_putChar(char c) {
+  
+  ALCD_write(ALCD_RS_State_Data, c, ALCD_CMD_WRITE_DATA);
+  
+  if (++alcdHandle.X >= alcdHandle.Columns) {
+    alcdHandle.X = 0;
+    if (++alcdHandle.Y >= alcdHandle.Rows) {
+      alcdHandle.Y = 0;
+    }
+    ALCD_goto(alcdHandle.X, alcdHandle.Y);
+  }
+}
+void ALCD_puts(const char* str) {
+  
+  while (*str != '\0') {
+    ALCD_putChar(*str++);
+  }
+}
+/* void ALCD_putNum(uint32_t num) {
   
   char tmp[13];
+  
   snprintf(tmp, sizeof(tmp) - 1, "%d", num);
   ALCD_puts(tmp);
   
-}
-void ALCD_printf(const char* fmt, ...) {
+} */
+/* void ALCD_printf(const char* fmt, ...) {
   
   char tmp[ALCD_PRINTF_BUF_SIZE];
   
@@ -542,7 +568,7 @@ void ALCD_printf(const char* fmt, ...) {
   va_end(args);
   ALCD_puts(tmp);
   
-}
+} */
 
 void ALCD_putCharXY(uint8_t x, uint8_t y, char c) {
   ALCD_goto(x, y);
@@ -552,10 +578,19 @@ void ALCD_putsXY(uint8_t x, uint8_t y, const char* str) {
   ALCD_goto(x, y);
   ALCD_puts(str);
 }
-void ALCD_putNumXY(uint8_t x, uint8_t y, uint32_t num) {
+/* void ALCD_putNumXY(uint8_t x, uint8_t y, uint32_t num) {
   ALCD_goto(x, y);
-  ALCD_putNum(num);
-}
+  char tmp[13];
+  snprintf(tmp, sizeof(tmp) - 1, "%d", num);
+  ALCD_puts(tmp);
+  
+  // For clearing dead spaces
+  if (floor(log10(oldNum)) > floor(log10(num))) {
+    ALCD_clearSection(x + floor(log10(num)), y, x + (floor(log10(oldNum))), y);
+  }
+  oldNum = num;
+  
+} */
 void ALCD_printfXY(uint8_t x, uint8_t y, const char* fmt, ...) {
   char tmp[ALCD_PRINTF_BUF_SIZE];
   
@@ -565,6 +600,12 @@ void ALCD_printfXY(uint8_t x, uint8_t y, const char* fmt, ...) {
   va_end(args);
   ALCD_goto(x, y);
   ALCD_puts(tmp);
+  
+  // For clearing dead spaces
+  if (oldLen > strlen(tmp)) {
+    ALCD_clearSection(x + strlen(tmp) , y, x + oldLen , y);
+  }
+  oldLen = strlen(tmp);
 }
 
 
