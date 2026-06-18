@@ -49,14 +49,14 @@ typedef union {
     uint8_t                             D6  : 1;
     uint8_t                             D7  : 1;
   };
-} ALCD_Byte; 
+} ALCD_Byte;
 
 typedef struct {
   int8_t                                X;
   int8_t                                Y;
   int8_t                                Rows;
   int8_t                                Columns;
-    
+
 } ALCD_Handle;
 
 /* USER CODE END PTD */
@@ -171,7 +171,7 @@ void Delay_ms(uint32_t ms);
 void ALCD_init(uint8_t col, uint8_t row);
 void ALCD_initPins(void);
 void ALCD_write(ALCD_RS_State rs, uint8_t val, uint32_t timeout);
-void ALCD_write4Bit(ALCD_RS_State rs, uint8_t val); 
+void ALCD_write4Bit(ALCD_RS_State rs, uint8_t val);
 void ALCD_trigger(void);
 
 void ALCD_clear();
@@ -225,26 +225,25 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
-  
+
   ALCD_init(16, 2);
-  
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  uint32_t counter = 10;
-  
-  ALCD_printfXY(0, 0, "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+  float counter = 0.1;
+
   while (1)
   {
-    
-    ALCD_printfXY(0, 0, "TIME: %d", counter);
+
+    ALCD_printfXY(0, 0, "TIME: %.2f", counter);
     //ALCD_putNumXY(10, 0, counter);
     ALCD_Delay_ms(150);
     counter++;
-    if (counter == 101) { counter = 0; }
-    
-    
+    if (counter >= 101) { counter = 0; }
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -304,7 +303,7 @@ void SystemClock_Config(void)
 
 void Delay_us(uint32_t us) {
   us = SystemCoreClock / 3000000 * us;
-  
+
   __asm volatile (
     "1:                 \n"     // Label
     "subs %0, %0, #1    \n"     // us--
@@ -316,7 +315,7 @@ void Delay_us(uint32_t us) {
 }
 void Delay_ms(uint32_t ms) {
   ms = SystemCoreClock / 3000 * ms;
-  
+
   __asm volatile (
     "1:                 \n"     // Label
     "subs %0, %0, #1    \n"     // ms--
@@ -330,56 +329,56 @@ void Delay_ms(uint32_t ms) {
 // End of SoftwareDelay-------------------------------------------------------*
 
 void ALCD_init(uint8_t col, uint8_t row) {
-  
+
   ALCD_initPins();
-  
+
   // wait 40ms for rise up
   ALCD_Delay_ms(40);
   // Send 4Bit Command: 8Bit Interface
   ALCD_write4Bit(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_FUNCTION_SET | ALCD_FLAG_FUNCTION_SET_8Bit
   );
   // wait 5ms
   ALCD_Delay_ms(5);
   // Send 4Bit Command: 8Bit Interface
   ALCD_write4Bit(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_FUNCTION_SET | ALCD_FLAG_FUNCTION_SET_8Bit
   );
   // wait 100us
   ALCD_Delay_us(100);
   // Send 4Bit Command: 8Bit Interface
   ALCD_write4Bit(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_FUNCTION_SET | ALCD_FLAG_FUNCTION_SET_8Bit
   );
   // Send 4Bit Command: 4Bit Interface
   ALCD_write4Bit(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_FUNCTION_SET | ALCD_FLAG_FUNCTION_SET_4Bit
   );
-  
+
   // Send Command: 4Bit Interface, 2 Line, 5x8 dot
   ALCD_write(
-    ALCD_RS_State_Command, 
-    ALCD_CMD_FUNCTION_SET | ALCD_FLAG_FUNCTION_SET_4Bit | 
+    ALCD_RS_State_Command,
+    ALCD_CMD_FUNCTION_SET | ALCD_FLAG_FUNCTION_SET_4Bit |
     ALCD_FLAG_FUNCTION_SET_2Line | ALCD_FLAG_FUNCTION_SET_5x8_DOT,
     ALCD_CMD_FUNCTION_SET_TIMEOUT
   );
   // Send Command: Display off
   ALCD_write(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_DISPLAY_CONTROL | ALCD_FLAG_DISPLAY_CONTROL_OFF,
     ALCD_CMD_DISPLAY_CONTROL_TIMEOUT
   );
   // Send Command: Display clear
   ALCD_write(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_CLEAR_DISPLAY,
     ALCD_CMD_CLEAR_DISPLAY_TIMEOUT
   );
-  
+
   // Display on
   ALCD_write(
     ALCD_RS_State_Command,
@@ -387,20 +386,20 @@ void ALCD_init(uint8_t col, uint8_t row) {
     ALCD_FLAG_DISPLAY_CONTROL_CURSOR_OFF | ALCD_FLAG_DISPLAY_CONTROL_BLINK_OFF,
     ALCD_CMD_DISPLAY_CONTROL_TIMEOUT
   );
-  
+
   alcdHandle.Rows = row;
   alcdHandle.Columns = col;
   alcdHandle.X = 0;
   alcdHandle.Y = 0;
-  
+
 }
 void ALCD_initPins(void) {
-  
+
   GPIO_InitTypeDef init;
-  
+
   //Clock Enable
   ALCD_CLK_ENABLE();
-  
+
   init.Mode = GPIO_MODE_OUTPUT_PP;
   init.Pull = GPIO_NOPULL;
   init.Speed = GPIO_SPEED_HIGH;
@@ -425,10 +424,10 @@ void ALCD_initPins(void) {
   // init D7
   init.Pin = ALCD_D7_PIN;
   HAL_GPIO_Init(ALCD_D7_GPIO, &init);
-  
+
 }
 void ALCD_write(ALCD_RS_State rs, uint8_t val, uint32_t timeout) {
-  
+
   ALCD_Byte byte =  { val };
   //RS LOW
   HAL_GPIO_WritePin(ALCD_RS_GPIO, ALCD_RS_PIN, (GPIO_PinState) rs);
@@ -450,10 +449,10 @@ void ALCD_write(ALCD_RS_State rs, uint8_t val, uint32_t timeout) {
   ALCD_trigger();
   // Wait
   ALCD_Delay_us(timeout);
-  
+
 }
 void ALCD_write4Bit(ALCD_RS_State rs, uint8_t val) {
-  
+
   ALCD_Byte byte =  { val };
   //RS LOW
   HAL_GPIO_WritePin(ALCD_RS_GPIO, ALCD_RS_PIN, GPIO_PIN_RESET);
@@ -466,34 +465,34 @@ void ALCD_write4Bit(ALCD_RS_State rs, uint8_t val) {
   HAL_GPIO_WritePin(ALCD_D4_GPIO, ALCD_D4_PIN, byte.D4);
   // Trigger
   ALCD_trigger();
-  
+
 }
 void ALCD_trigger(void) {
-  
+
   // SET HIGH
   HAL_GPIO_WritePin(ALCD_EN_GPIO, ALCD_EN_PIN, GPIO_PIN_SET);
   ALCD_Delay_us(ALCD_EN_HIGH_TIME);
   // SET LOW
   HAL_GPIO_WritePin(ALCD_EN_GPIO, ALCD_EN_PIN, GPIO_PIN_RESET);
   ALCD_Delay_us(ALCD_EN_LOW_TIME);
-  
+
 }
 
 void ALCD_clear() {
-  
+
   ALCD_write(
-    ALCD_RS_State_Command, 
+    ALCD_RS_State_Command,
     ALCD_CMD_CLEAR_DISPLAY,
     ALCD_CMD_CLEAR_DISPLAY_TIMEOUT
   );
-  
+
 }
 void ALCD_goto(uint8_t x, uint8_t y) {
-  
+
   static const uint8_t LINE_ADDR[4] = {
     0x00, 0x40, 0x20, 0x60
   };
-  
+
   if (x >= alcdHandle.Columns) {
     x = 0;
     y++;
@@ -501,7 +500,7 @@ void ALCD_goto(uint8_t x, uint8_t y) {
   if (y >= alcdHandle.Rows) {
     y = 0;
   }
-  
+
   ALCD_write(
     ALCD_RS_State_Command,
     ALCD_CMD_SET_DDRAM | (LINE_ADDR[y] + x),
@@ -509,15 +508,15 @@ void ALCD_goto(uint8_t x, uint8_t y) {
   );
   alcdHandle.X = x;
   alcdHandle.Y = y;
-  
+
 }
 void ALCD_clearLocation(uint8_t x, uint8_t y) {
   ALCD_putsXY(x, y, " ");
 }
 void ALCD_clearSection(int8_t x0, int8_t y0, int8_t x1, int8_t y1) {
-  
+
   if (y0 == y1) {
-    while (x1 >= x0) { 
+    while (x1 >= x0) {
       ALCD_clearLocation(x1, y0);
       x1--;
     }
@@ -533,9 +532,9 @@ void ALCD_clearSection(int8_t x0, int8_t y0, int8_t x1, int8_t y1) {
 }
 
 void ALCD_putChar(char c) {
-  
+
   ALCD_write(ALCD_RS_State_Data, c, ALCD_CMD_WRITE_DATA);
-  
+
   if (++alcdHandle.X >= alcdHandle.Columns) {
     alcdHandle.X = 0;
     if (++alcdHandle.Y >= alcdHandle.Rows) {
@@ -545,30 +544,30 @@ void ALCD_putChar(char c) {
   }
 }
 void ALCD_puts(const char* str) {
-  
+
   while (*str != '\0') {
     ALCD_putChar(*str++);
   }
 }
 /* void ALCD_putNum(uint32_t num) {
-  
+
   char tmp[13];
-  
+
   snprintf(tmp, sizeof(tmp) - 1, "%d", num);
   ALCD_puts(tmp);
-  
+
 } */
-/* void ALCD_printf(const char* fmt, ...) {
-  
+void ALCD_printf(const char* fmt, ...) {
+
   char tmp[ALCD_PRINTF_BUF_SIZE];
-  
+
   va_list args;
   va_start(args, fmt);
   vsnprintf(tmp, sizeof(tmp) - 1, fmt, args);
   va_end(args);
   ALCD_puts(tmp);
-  
-} */
+
+}
 
 void ALCD_putCharXY(uint8_t x, uint8_t y, char c) {
   ALCD_goto(x, y);
@@ -583,24 +582,24 @@ void ALCD_putsXY(uint8_t x, uint8_t y, const char* str) {
   char tmp[13];
   snprintf(tmp, sizeof(tmp) - 1, "%d", num);
   ALCD_puts(tmp);
-  
+
   // For clearing dead spaces
   if (floor(log10(oldNum)) > floor(log10(num))) {
     ALCD_clearSection(x + floor(log10(num)), y, x + (floor(log10(oldNum))), y);
   }
   oldNum = num;
-  
+
 } */
 void ALCD_printfXY(uint8_t x, uint8_t y, const char* fmt, ...) {
   char tmp[ALCD_PRINTF_BUF_SIZE];
-  
+
   va_list args;
   va_start(args, fmt);
   vsnprintf(tmp, sizeof(tmp) - 1, fmt, args);
   va_end(args);
   ALCD_goto(x, y);
   ALCD_puts(tmp);
-  
+
   // For clearing dead spaces
   if (oldLen > strlen(tmp)) {
     ALCD_clearSection(x + strlen(tmp) , y, x + oldLen , y);
