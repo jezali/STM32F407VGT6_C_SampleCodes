@@ -107,7 +107,8 @@ int main(void)
 
   while (1)
   {
-    if (adcFlag) {
+    if ((ADC_MAX_SAMPLES - __HAL_DMA_GET_COUNTER(hadc1.DMA_Handle)) % 200 == 0) {   //Overlap
+    //if (adcFlag) {                                                                // Normal
       adcFlag = 0;
 
       // AVG
