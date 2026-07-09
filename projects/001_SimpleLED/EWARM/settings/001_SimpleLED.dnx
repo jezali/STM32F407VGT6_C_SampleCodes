@@ -14,7 +14,7 @@
         <MemConfigValue>C:\ST\iar\ewarm-9.70.2\arm\config\debugger\ST\STM32F407VG.ddf</MemConfigValue>
     </PlDriver>
     <DebugChecksum>
-        <Checksum>3387420380</Checksum>
+        <Checksum>1456950890</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -70,8 +70,8 @@
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
     <ArmDriver>
-        <EnableCache>0</EnableCache>
         <EnforceMemoryConfiguration>1</EnforceMemoryConfiguration>
+        <EnableCache>0</EnableCache>
     </ArmDriver>
     <Trace2>
         <Enabled>0</Enabled>

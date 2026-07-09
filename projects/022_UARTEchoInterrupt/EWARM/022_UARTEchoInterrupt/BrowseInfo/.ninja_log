@@ -1,0 +1,22 @@
+# ninja log v6
+1	118	8050388560579282	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_5529639980037610338.dir/gpio.c.json	c859062c15f58eb6
+118	172	8050388561747903	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_9345438667183768884.dir/main.c.json	ee0e4207ceefdac8
+172	226	8050388562288821	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_5166855377044049419.dir/stm32f4xx_hal_msp.c.json	7b38f6ca8a976c83
+226	280	8050388562826303	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_17212722124471408081.dir/stm32f4xx_it.c.json	2b584ccd0c14b212
+280	334	8050388563369306	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_16930841471303298927.dir/usart.c.json	2369d04f29e23548
+334	385	8050388563914772	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_7842844356638189474.dir/system_stm32f4xx.c.json	2df30eb0b09cee53
+386	439	8050388564424857	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_2574257417942943618.dir/stm32f4xx_hal.c.json	12dd8688d45e4f59
+439	495	8050388564960164	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_8271664498723903844.dir/stm32f4xx_hal_cortex.c.json	24e123913f458906
+495	547	8050388565510680	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_4408747211363283090.dir/stm32f4xx_hal_dma.c.json	aafcb13b3ac3bf95
+548	599	8050388566046932	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_1904742995302480264.dir/stm32f4xx_hal_dma_ex.c.json	728e3b0db206e085
+599	649	8050388566562012	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_8846769003119280499.dir/stm32f4xx_hal_exti.c.json	c5bca38aa743b82f
+650	701	8050388567061430	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_715965757228957608.dir/stm32f4xx_hal_flash.c.json	1fca3e61f632d28
+701	750	8050388567581558	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_5482407134888553452.dir/stm32f4xx_hal_flash_ex.c.json	3ae5840069c86234
+751	798	8050388568076839	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_11753923845331668066.dir/stm32f4xx_hal_flash_ramfunc.c.json	84048994fea1f1ef
+799	845	8050388568549432	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_12447680054400157171.dir/stm32f4xx_hal_gpio.c.json	435a011b4ede8db3
+845	891	8050388569022119	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_5524704084487524043.dir/stm32f4xx_hal_pwr.c.json	7e5a43565216e0b8
+892	938	8050388569480991	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_2192036558297866650.dir/stm32f4xx_hal_pwr_ex.c.json	7a69321f267bdb1f
+938	985	8050388569951662	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_5968338931592963689.dir/stm32f4xx_hal_rcc.c.json	81ae29659b35e950
+986	1032	8050388570421500	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_12454407512875011684.dir/stm32f4xx_hal_rcc_ex.c.json	ef8e0dd02ae1028b
+1032	1077	8050388570890611	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/Src_17366709354581954614.dir/stm32f4xx_hal_uart.c.json	77b7ea1b059457bf
+1078	1187	8050388571347102	C:/ST/STM32WS/projects/022_UARTEchoInterrupt/EWARM/022_UARTEchoInterrupt/BrowseInfo/compile_commands.json	d283b858f62585f0

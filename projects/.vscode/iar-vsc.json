@@ -1,0 +1,42 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\013_TIMPWM\\EWARM\\Project.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\002_PeriodicLEDBlink\\EWARM\\Project.eww": {
+      "configs": {
+        "${workspaceFolder}\\002_PeriodicLEDBlink\\EWARM\\002_PeriodicLEDBlink.ewp": "002_PeriodicLEDBlink"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\002_PeriodicLEDBlink\\EWARM\\002_PeriodicLEDBlink.ewp"
+      }
+    },
+    "${workspaceFolder}\\023_UARTEchoDMA\\EWARM\\Project.eww": {
+      "configs": {
+        "${workspaceFolder}\\023_UARTEchoDMA\\EWARM\\023_UARTEchoDMA.ewp": "023_UARTEchoDMA"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\023_UARTEchoDMA\\EWARM\\023_UARTEchoDMA.ewp"
+      }
+    },
+    "${workspaceFolder}\\022_UARTEchoInterrupt\\EWARM\\Project.eww": {
+      "configs": {
+        "${workspaceFolder}\\022_UARTEchoInterrupt\\EWARM\\022_UARTEchoInterrupt.ewp": "022_UARTEchoInterrupt"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\022_UARTEchoInterrupt\\EWARM\\022_UARTEchoInterrupt.ewp"
+      }
+    },
+    "${workspaceFolder}\\013_TIMPWM\\EWARM\\Project.eww": {
+      "configs": {
+        "${workspaceFolder}\\013_TIMPWM\\EWARM\\013_TIMPWM.ewp": "013_TIMPWM"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\013_TIMPWM\\EWARM\\013_TIMPWM.ewp"
+      }
+    }
+  },
+  "workbench": {
+    "path": "c:\\ST\\iar\\ewarm-9.70.2"
+  }
+}

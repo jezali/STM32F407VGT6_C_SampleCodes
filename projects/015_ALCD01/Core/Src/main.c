@@ -559,7 +559,7 @@ void ALCD_puts(const char* str) {
 } */
 void ALCD_printf(const char* fmt, ...) {
 
-  char tmp[ALCD_PRINTF_BUF_SIZE];
+  char tmp[ALCD_PRINTF_BUF_SIZE] = "";
 
   va_list args;
   va_start(args, fmt);
@@ -591,7 +591,7 @@ void ALCD_putsXY(uint8_t x, uint8_t y, const char* str) {
 
 } */
 void ALCD_printfXY(uint8_t x, uint8_t y, const char* fmt, ...) {
-  char tmp[ALCD_PRINTF_BUF_SIZE];
+  char tmp[ALCD_PRINTF_BUF_SIZE] = "";
 
   va_list args;
   va_start(args, fmt);
