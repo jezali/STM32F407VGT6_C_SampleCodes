@@ -189,7 +189,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
     adcValid = 1; // bug fix for the first few samplings
   }
 
-  if (++adcValueIndex >= ADC_NEW_SAMPLE_SIZE && adcValid) {
+  if (++adcSampleCount >= ADC_NEW_SAMPLE_SIZE && adcValid) {
     adcSampleCount = 0;
     adcFlag = 1;
   }
